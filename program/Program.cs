@@ -24,14 +24,14 @@ string[] GetArray(int size)
 
 string[] GetNewArray(int size)
 {
-    // string[] temp = new string[size];
     string[] result = new string[size];
-    // string temp2;
+    int j=0;
     for (int i = 0; i < size; i++)
     {
         if (array[i].Length < 3)
         {
-            result[i] = array[i];
+            result[j] = array[i];
+            j++;
         }
     }
     return result;
