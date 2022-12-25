@@ -1,12 +1,13 @@
 ﻿// Написать программу, которая из имеющегося массива строк
 // формирует новый массив из строк, длина которых меньше или равна 3
 
-Console.Write("Сколько данных вы введете в массив? ");
+Console.Write("Сколько данных вы введете в массив(число)? ");
 int size = int.Parse(Console.ReadLine()!);
 string[] array = GetArray(size);
+Console.WriteLine();
 Console.WriteLine($"Получен массив [ {String.Join("; ", array)} ]");
 string[] newarray = GetNewArray(size);
-Console.WriteLine($"Элементы массива меньше трех символов: [ {String.Join("; ", newarray)} ]");
+Console.WriteLine($"Элементы массива на 3 или меньше символов: [ {String.Join("; ", newarray)} ]");
 
 
 // --------------Metods------------------
@@ -28,7 +29,7 @@ string[] GetNewArray(int size)
     int size2=0;
     for (int i = 0; i < size; i++)
     {
-        if (array[i].Length < 3)
+        if (array[i].Length <= 3)
         {
             temp[size2] = array[i];
             size2++;
